@@ -21,7 +21,6 @@ body {
 }
 
 .container {
-    position: relative;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -30,6 +29,7 @@ body {
 }
 
 .grid {
+    position: relative;
     width: 30%;
     aspect-ratio: 0.8;
     display: grid;
@@ -179,7 +179,19 @@ body {
     }
 }
 
+.character {
+    bottom: 0;
 
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 70%;
+    }
+}
+
+/* animation */
 
 
 
