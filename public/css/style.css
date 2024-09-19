@@ -29,6 +29,7 @@ body {
 }
 
 .grid {
+    overflow: hidden;
     position: relative;
     width: 30%;
     aspect-ratio: 0.8;
@@ -192,8 +193,111 @@ body {
 }
 
 /* animation */
+.text p, .text, .character {
+    transition: 1s all;
+    transition-timing-function: ease-out;
+}
 
+/* before animation state*/
+section {
+    --primary-delay: 0.5s;
+    --secondary-delay: 0.75s;
 
+    .text:nth-child(1) {
+        p {
+            transform: translate(-100%);
+            transition-delay: var(--primary-delay);
+        }
+    }
+
+    .text:nth-child(2) {
+        p {
+            transform: rotate(-90deg) translate(-800%);
+            transition-delay: var(--primary-delay);
+        }
+    }
+
+    .text:nth-child(3) {
+        p {
+            transform: translate(100%);
+        }
+    }
+
+    .text:nth-child(4) {
+        transform: translate(0, 150%);
+    }
+
+    .text:nth-child(5) {
+        p {
+            transform: rotate(90deg) translate(-800%);
+        }
+    }
+
+    .text:nth-child(6) {
+        p {
+            transform: rotate(90deg) translate(-800%);
+            transition-delay: var(--primary-delay);
+        }
+    }
+
+    .text:nth-child(7) {
+        transform: translate(100%);
+        transition-delay: var(--primary-delay);
+    }
+
+    .character {
+        transform: translate(0, 100%);
+        transition-delay: var(--secondary-delay);
+    }
+}
+
+/* after animation state */
+section.show {
+    .text:nth-child(1) {
+        p {
+            transform: translate(0);
+            /* clip-path: inset(0); */
+        }
+    }
+
+    .text:nth-child(2) {
+        p {
+            transform: rotate(-90deg) translate(0);
+            /* clip-path: inset(0); */
+        }
+    }
+
+    .text:nth-child(3) {
+        p {
+            transform: translate(0);
+        }
+    }
+
+    .text:nth-child(4) {
+
+        transform: translate(0);
+    }
+
+    .text:nth-child(5) {
+        p {
+            transform: rotate(90deg) translate(0);
+        }
+    }
+
+    .text:nth-child(6) {
+        p {
+            transform: rotate(90deg) translate(0);
+        }
+    }
+
+    .text:nth-child(7) {
+        transform: translate(0);
+    }
+
+    .character {
+        transform: translate(0);
+    }
+}
 
 @media (orientation: portrait) {
     .grid {
